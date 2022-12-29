@@ -1,5 +1,6 @@
 const img = document.getElementById ( 'img' )
 const buttons = document.getElementById ( 'buttons' )
+let colorIndex = 0
 
 const trafficLght = ( event ) => {
     turnOn[event.target.id]()
@@ -34,3 +35,5 @@ const turnOn = {
 
 
 buttons.addEventListener ( 'click', trafficLght) 
+
+
