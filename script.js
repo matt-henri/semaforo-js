@@ -6,11 +6,28 @@ const trafficLght = ( event ) => {
    
 }
 
+const nextIndex = () => {
+    colorIndex = colorIndex < 2 ? ++colorIndex : 0
+}
+
+const changeColor = () => {
+    const colors = [ 'red', 'yellow', 'green' ]
+    const color = colors[ colorIndex ];
+    turnOn[color]();
+    nextIndex();
+
+}
+
+const stopAutomatic = () => {
+    clearInterval ( intervalid)
+}
+
 
 const turnOn = {
-    'red':    () => img.src = './img/vermelho.png',
-    'yellow': () => img.src = './img/amarelo.png',
-    'green':  () => img.src = './img/verde.png',
+    'red':       () => img.src = './img/vermelho.png',
+    'yellow':    () => img.src = './img/amarelo.png',
+    'green':     () => img.src = './img/verde.png',
+    'automatic': () => intervalid = setInterval( changeColor, 1000),
     
 }
 
